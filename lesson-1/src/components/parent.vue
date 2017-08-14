@@ -7,10 +7,17 @@
 
 </style>
 <template>
-    <sun :message="msg"></sun>
+    <div>
+        <p>{{msg}}</p>
+        <sun ﻿@commit='responseChild'></sun>
+        <other_1></other_1>
+        <other_2></other_2>
+    </div>
 </template>
 <script>
     import sun from './sun.vue'
+    import other_1 from './other_1.vue'
+    import other_2 from './other_2.vue'
 
     export default {
         data() {
@@ -18,7 +25,12 @@
                 msg: 'something msg'
             }
         },
-        methods: {},
+        methods: {
+            responseChild(msg) {
+                console.log(msg)
+                this.msg = msg
+            }
+        },
         mounted() {
 
         },
@@ -26,7 +38,9 @@
 
         },
         components: {
-            sun
+            sun,
+            other_1,
+            other_2
         }
     }
 </script>

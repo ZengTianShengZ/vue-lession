@@ -7,9 +7,10 @@
 
 </style>
 <template>
-    <div></div>
+    <div>o 1</div>
 </template>
 <script>
+
     export default {
         data() {
             return {
@@ -18,9 +19,10 @@
         },
         methods: {},
         mounted() {
-            this.$emit('commit', 'commit msg to parent')
+            this.bus.$emit('busData', 'commit msg to other components 2')
         },
         created() {
+
         }
     }
 </script>
